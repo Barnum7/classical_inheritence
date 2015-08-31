@@ -67,7 +67,11 @@ class Parrot < Animal
 end
 
 class Chimpanzee < Primate 
-	friends = ["Jane","Tarzan"]
+	attr_reader :friends
+	def initialize(name)
+		super
+		@friends = ['Jane','Tarzan']
+	end
 end
 
 test_1 = Chimpanzee.new('George')
@@ -77,3 +81,5 @@ puts test_2.say_name
 test_3 = Bat.new('Bruce')
 test_3.sucks_blood
 test_3.fly
+test_4 = Chimpanzee.new('Ceaser')
+puts test_4.friends
